@@ -3,7 +3,7 @@ provider "aws" {
 } 
 resource "aws_key_pair" "test" { 
  key_name = "demo" 
- public_key = file("C:/Users/91879/ashu/siva/demo.pub") 
+ public_key = file("./demo.pub") 
 } 
 resource "aws_instance" "web" { 
  ami = "ami-03c983f9003cb9cd1" 
@@ -17,7 +17,7 @@ resource "aws_instance" "web" {
  connection {
  type = "ssh" 
  user = "ubuntu" 
- private_key = file("C:/Users/91879/ashu/siva/demo")  
+ private_key = file("./demo")  
  host = self.public_ip 
  timeout = "1m" 
  agent = false 
@@ -46,7 +46,7 @@ resource "aws_instance" "webserver" {
  connection {
  type = "ssh" 
  user = "ubuntu" 
- private_key = file("C:/Users/91879/ashu/siva/demo")  
+ private_key = file("./demo")  
  host = self.public_ip 
  timeout = "1m" 
  agent = false 
