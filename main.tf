@@ -1,6 +1,14 @@
 provider "aws" { 
  region = "us-west-2" 
 } 
+terraform {
+  cloud {
+    organization = "project_2"
+    workspaces {
+      name = "project-2"
+    }
+  }
+}
 resource "aws_key_pair" "test" { 
  key_name = "demo" 
  public_key = file("./demo.pub") 
