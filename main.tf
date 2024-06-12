@@ -3,7 +3,7 @@ provider "aws" {
 } 
 terraform {
   cloud {
-    organization = "project_2"
+    organization = "ashu4422"
     workspaces {
       name = "project-2"
     }
