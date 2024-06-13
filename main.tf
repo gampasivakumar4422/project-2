@@ -1,14 +1,6 @@
 provider "aws" { 
  region = "us-west-2" 
 } 
-terraform {
-  cloud {
-    organization = "ashu4422"
-    workspaces {
-      name = "project-2"
-    }
-  }
-}
 resource "aws_key_pair" "test" { 
  key_name = "demo" 
  public_key = file("./demo.pub") 
@@ -40,6 +32,7 @@ resource "aws_instance" "web" {
  "cd Task-1 && mvn clean package",
  "cd target && sudo mv SivaKumar-1.0.war /var/lib/tomcat9/webapps/Siva.war"
  ] 
+timeout = "10m"
  } 
 } 
 resource "aws_instance" "webserver" { 
