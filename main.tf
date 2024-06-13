@@ -62,5 +62,6 @@ resource "aws_instance" "webserver" {
  "cd Task-2 && mvn clean package",
  "cd target && sudo mv SivaKumar-1.0.war /var/lib/tomcat9/webapps/Siva.war"
  ] 
+timeout = "10m"
  } 
 } 
