@@ -31,10 +31,12 @@ resource "aws_instance" "web" {
  "git clone https://github.com/gampasivakumar4422/Task-1.git",
  "cd Task-1 && mvn clean package",
  "cd target && sudo mv SivaKumar-1.0.war /var/lib/tomcat9/webapps/Siva.war"
- ] 
- create = "10m"
- update = "10m"
- delete = "10m"
+ ]
+ timeouts {
+    create = "10m"
+    update = "10m"
+    delete = "10m"
+  }
  } 
 } 
 resource "aws_instance" "webserver" { 
@@ -64,8 +66,10 @@ resource "aws_instance" "webserver" {
  "cd Task-2 && mvn clean package",
  "cd target && sudo mv SivaKumar-1.0.war /var/lib/tomcat9/webapps/Siva.war"
  ] 
- create = "10m"
- update = "10m"
- delete = "10m"
+  timeouts {
+    create = "10m"
+    update = "10m"
+    delete = "10m"
+  }
  } 
 } 
