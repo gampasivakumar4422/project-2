@@ -24,7 +24,7 @@ resource "aws_instance" "web" {
  } 
  provisioner "remote-exec" { 
  inline = [ 
- "sudo add-apt-repository ppa:tomcat9"
+ "sudo add-apt-repository ppa:tomcat9",
  "sudo apt-get update", 
  "sudo apt-get install maven -y",
  "sudo apt-get install tomcat9 tomcat9-admin -y",
@@ -54,7 +54,7 @@ resource "aws_instance" "webserver" {
  } 
  provisioner "remote-exec" { 
  inline = [ 
- "sudo add-apt-repository ppa:tomcat9"
+ "sudo add-apt-repository ppa:tomcat9",
  "sudo apt-get update", 
  "sudo apt-get install maven -y",
  "sudo apt-get install tomcat9 tomcat9-admin -y",
